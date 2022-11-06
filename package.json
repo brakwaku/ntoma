@@ -1,37 +1,67 @@
 {
   "name": "ntoma",
-  "version": "1.0.0",
-  "engines": {
-    "node": "^10.15.3",
-    "npm": "^6.4.1"
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@stripe/react-stripe-js": "1.7.0",
+    "@stripe/stripe-js": "1.25.0",
+    "@testing-library/jest-dom": "5.16.1",
+    "@testing-library/react": "12.1.2",
+    "@testing-library/user-event": "13.5.0",
+    "@types/jest": "27.4.1",
+    "@types/node": "17.0.23",
+    "@types/react": "17.0.43",
+    "@types/react-dom": "17.0.14",
+    "@types/redux-logger": "3.0.9",
+    "@types/styled-components": "5.1.24",
+    "dotenv": "16.0.0",
+    "firebase": "9.6.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "7.2.6",
+    "react-router-dom": "6",
+    "react-scripts": "5.0.0",
+    "redux": "4.1.2",
+    "redux-logger": "3.0.6",
+    "redux-persist": "6.0.0",
+    "redux-saga": "1.1.3",
+    "redux-thunk": "2.4.1",
+    "reselect": "4.1.5",
+    "sass": "1.49.7",
+    "stripe": "8.210.0",
+    "styled-components": "5.3.3",
+    "typed-redux-saga": "1.4.0",
+    "typescript": "4.6.3",
+    "web-vitals": "2.1.4"
+  },
+  "resolutions": {
+    "babel-jest": "24.7.1"
   },
   "scripts": {
-    "client": "cd client && yarn start",
-    "server": "nodemon server.js",
-    "build": "cd client && npm run build",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brakwaku/ntoma.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "author": "Kwaku Appau-Nkansah",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/brakwaku/ntoma/issues"
-  },
-  "homepage": "https://github.com/brakwaku/ntoma#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "cors": "2.8.5",
-    "dotenv": "7.0.0",
-    "express": "^4.16.4",
-    "stripe": "6.28.0"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "concurrently": "^4.0.1",
-    "nodemon": "^1.19.1"
+    "babel-plugin-macros": "3.1.0"
   }
 }
