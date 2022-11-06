@@ -1,45 +1,37 @@
 {
   "name": "ntoma",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "firebase": "^9.8.3",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-redux": "^8.0.2",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
-    "redux": "^4.2.0",
-    "redux-logger": "^3.0.6",
-    "sass": "^1.52.3",
-    "styled-components": "^5.3.5",
-    "web-vitals": "^2.1.4"
+  "version": "1.0.0",
+  "engines": {
+    "node": "^10.15.3",
+    "npm": "^6.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "build": "cd client && npm run build",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brakwaku/ntoma.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "Kwaku Appau-Nkansah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brakwaku/ntoma/issues"
+  },
+  "homepage": "https://github.com/brakwaku/ntoma#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "2.8.5",
+    "dotenv": "7.0.0",
+    "express": "^4.16.4",
+    "stripe": "6.28.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.19.1"
   }
 }
